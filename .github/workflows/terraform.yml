@@ -101,3 +101,4 @@ jobs:
             --parameters commands='date' \
             --output text \
             --query "Command.CommandId"
+
