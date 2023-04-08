@@ -87,6 +87,6 @@ output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
 }
 
-output "ip-address" {
+output "instance-id" {
   value = aws_instance.web.id
 }
