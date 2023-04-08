@@ -94,11 +94,9 @@ jobs:
         run: |
           INSTANCE_ID=$(terraform output -raw instance-id)
           echo "Instance ID: $INSTANCE_ID"
-
           aws ssm send-command \
             --instance-ids $INSTANCE_ID \
             --document-name "AWS-RunShellScript" \
             --parameters commands='date' \
             --output text \
             --query "Command.CommandId"
-
