@@ -106,11 +106,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         run: |
-          INSTANCE_ID=$(terraform output -json instance-id | tr -d '\n')
-          echo "Instance ID: $INSTANCE_ID"
-
           COMMAND_ID=$(aws ssm send-command \
-            --instance-ids $INSTANCE_ID \
+            --instance-ids $(terraform output -raw instance-id) \
             --document-name "AWS-RunShellScript" \
             --parameters commands='date' \
             --output text \
