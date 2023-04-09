@@ -87,7 +87,7 @@ jobs:
           AWS_REGION: us-east-1
         run: |
           #echo "::set-output name=INSTANCE_ID::$(terraform output -raw instance-id)"
-          echo "INSTANCE_ID=$(terraform output -raw instance-id)" >> $GITHUB_OUTPUT
+          echo "INSTANCE_ID=$(terraform output -raw instance-id)" >> $GITHUB_ENV
           echo $INSTANCE_ID  
 
       - name: Run command using SSM
@@ -102,7 +102,7 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --parameters commands='date' \
             --output text \
-            --query "Command.CommandId")" >> $GITHUB_OUTPUT
+            --query "Command.CommandId")" >> $GITHUB_ENV
 
       - name: Get command output
         continue-on-error: true
@@ -111,10 +111,8 @@ jobs:
            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
            AWS_REGION: us-east-1
         run: |
-
-          OUTPUT=$(aws ssm list-command-invocations \
+            echo $COMMAND_ID
+            aws ssm list-command-invocations \
             --command-id $COMMAND_ID \
             --details \
-            --query "CommandInvocations[0].CommandPlugins[0].Output")
-
-          echo "Date output: $OUTPUT"
+            --query "CommandInvocations[0].CommandPlugins[0].Output"
