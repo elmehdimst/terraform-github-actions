@@ -106,7 +106,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
         run: |
-          INSTANCE_ID=$(terraform output -json instance-id | python3 -c 'import sys, json; print(json.load(sys.stdin))')
+          INSTANCE_ID=$(terraform output -json instance-id | tr -d '"')
           echo "Instance ID: $INSTANCE_ID"
 
           COMMAND_ID=$(aws ssm send-command \
