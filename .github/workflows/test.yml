@@ -10,37 +10,37 @@ jobs:
     steps:
     - name: Print Oracle Instances Status Report
       run: |
-        echo ':book: **Oracle Instances Status Report** :book:'
-        echo ':calendar: Generated on: Thu Apr 20 23:07:31 UTC 2023'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
-        echo ''
-        echo ':eyes: Checking Oracle instance status...'
-        echo ':label: Instance Name: WDA31D01'
-        echo ':white_check_mark: Status: OPEN'
-        echo ':label: Database Name: WDA31D01'
-        echo ':arrow_double_up: Open Mode: READ WRITE'
-        echo ':busts_in_silhouette: Session Count: 57'
-        echo ':heavy_check_mark: The instance is up and running.'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
-        echo ''
-        echo ':ear: Checking the listener status...'
-        echo ':heavy_check_mark: Listener status: OK'
-        echo ':heavy_check_mark: The listener is up and running.'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
-        echo ''
-        echo ':mag_right: Checking RMAN Catalog access...'
-        echo ':heavy_check_mark: RMAN Catalog status: ACCESSIBLE'
-        echo ':heavy_check_mark: The instance has access to the RMAN Catalog.'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
-        echo ''
-        echo ':file_folder: Checking /dbbackup file share access rights...'
-        echo ':x: Incorrect group: Expected dba, found oracle'
-        echo ':x: Incorrect permissions: Expected 750, found 775'
-        echo ':warning: /dbbackup file share exists but does not have the correct access rights.'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
-        echo ''
-        echo ':clipboard: Checking scheduled backup jobs...'
-        echo ':heavy_check_mark: Archived Redo Log Backup job is scheduled.'
-        echo ':heavy_check_mark: Incremental Backup job is scheduled.'
-        echo ':heavy_check_mark: Full Backup job is scheduled.'
-        echo ':heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:'
+        echo -e ":book: **Oracle Instances Status Report** :book:"
+        echo -e ":calendar: Generated on: Thu Apr 20 23:07:31 UTC 2023"
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        echo -e ""
+        echo -e ":eyes: Checking Oracle instance status..."
+        echo -e ":label: Instance Name: WDA31D01"
+        echo -e ":white_check_mark: Status: OPEN"
+        echo -e ":label: Database Name: WDA31D01"
+        echo -e ":arrow_double_up: Open Mode: READ WRITE"
+        echo -e ":busts_in_silhouette: Session Count: 57"
+        echo -e ":heavy_check_mark: The instance is up and running."
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        echo -e ""
+        echo -e ":ear: Checking the listener status..."
+        echo -e ":heavy_check_mark: Listener status: OK"
+        echo -e ":heavy_check_mark: The listener is up and running."
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        echo -e ""
+        echo -e ":mag_right: Checking RMAN Catalog access..."
+        echo -e ":heavy_check_mark: RMAN Catalog status: ACCESSIBLE"
+        echo -e ":heavy_check_mark: The instance has access to the RMAN Catalog."
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        echo -e ""
+        echo -e ":file_folder: Checking /dbbackup file share access rights..."
+        echo -e ":x: Incorrect group: Expected dba, found oracle"
+        echo -e ":x: Incorrect permissions: Expected 750, found 775"
+        echo -e ":warning: /dbbackup file share exists but does not have the correct access rights."
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        echo -e ""
+        echo -e ":clipboard: Checking scheduled backup jobs..."
+        echo -e ":heavy_check_mark: Archived Redo Log Backup job is scheduled."
+        echo -e ":heavy_check_mark: Incremental Backup job is scheduled."
+        echo -e ":heavy_check_mark: Full Backup job is scheduled."
+        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
