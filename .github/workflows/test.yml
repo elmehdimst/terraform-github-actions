@@ -4,9 +4,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  test1:
+    runs-on: ubuntu-latest
+    name: Checking Oracle instance status
+  test2:
+    runs-on: ubuntu-latest
+    name: Checking the listener status
+  test3:
+    runs-on: ubuntu-latest
+    name: Checking RMAN Catalog access
+  test4:
+    runs-on: ubuntu-latest
+    name: Checking /dbbackup file share access rights
+  test5:
+    runs-on: ubuntu-latest
+    name: Checking scheduled backup jobs
   test:
     runs-on: ubuntu-latest
-
+    name: Gather Test Outputs
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -47,3 +62,4 @@ jobs:
         echo "Checking scheduled backup jobs"
         echo "===================================${RESET}"
         echo "${GREEN}PASSED: All scheduled backup jobs are configured correctly.${RESET}"
+        
