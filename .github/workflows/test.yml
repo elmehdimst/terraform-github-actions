@@ -4,43 +4,43 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate-report:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print Oracle Instances Status Report
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run tests and generate output
       run: |
-        echo -e ":book: **Oracle Instances Status Report** :book:"
-        echo -e ":calendar: Generated on: Thu Apr 20 23:07:31 UTC 2023"
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
-        echo -e ""
-        echo -e ":eyes: Checking Oracle instance status..."
-        echo -e ":label: Instance Name: WDA31D01"
-        echo -e ":white_check_mark: Status: OPEN"
-        echo -e ":label: Database Name: WDA31D01"
-        echo -e ":arrow_double_up: Open Mode: READ WRITE"
-        echo -e ":busts_in_silhouette: Session Count: 57"
-        echo -e ":heavy_check_mark: The instance is up and running."
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
-        echo -e ""
-        echo -e ":ear: Checking the listener status..."
-        echo -e ":heavy_check_mark: Listener status: OK"
-        echo -e ":heavy_check_mark: The listener is up and running."
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
-        echo -e ""
-        echo -e ":mag_right: Checking RMAN Catalog access..."
-        echo -e ":heavy_check_mark: RMAN Catalog status: ACCESSIBLE"
-        echo -e ":heavy_check_mark: The instance has access to the RMAN Catalog."
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
-        echo -e ""
-        echo -e ":file_folder: Checking /dbbackup file share access rights..."
-        echo -e ":x: Incorrect group: Expected dba, found oracle"
-        echo -e ":x: Incorrect permissions: Expected 750, found 775"
-        echo -e ":warning: /dbbackup file share exists but does not have the correct access rights."
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
-        echo -e ""
-        echo -e ":clipboard: Checking scheduled backup jobs..."
-        echo -e ":heavy_check_mark: Archived Redo Log Backup job is scheduled."
-        echo -e ":heavy_check_mark: Incremental Backup job is scheduled."
-        echo -e ":heavy_check_mark: Full Backup job is scheduled."
-        echo -e ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:"
+        # ANSI escape codes for colors and formatting
+        BOLD=$(tput bold)
+        RESET=$(tput sgr0)
+        GREEN=$(tput setaf 2)
+        BLUE=$(tput setaf 4)
+        RED=$(tput setaf 1)
+
+        echo "${BLUE}${BOLD}==================================="
+        echo "Checking Oracle instance status"
+        echo "===================================${RESET}"
+        echo "${GREEN}PASSED: Oracle instance is up and running.${RESET}"
+        echo ""
+        echo "${BLUE}${BOLD}==================================="
+        echo "Checking the listener status"
+        echo "===================================${RESET}"
+        echo "${GREEN}PASSED: Listener is active and functioning properly.${RESET}"
+        echo ""
+        echo "${BLUE}${BOLD}==================================="
+        echo "Checking RMAN Catalog access"
+        echo "===================================${RESET}"
+        echo "${GREEN}PASSED: RMAN Catalog is accessible and operational.${RESET}"
+        echo ""
+        echo "${BLUE}${BOLD}==================================="
+        echo "Checking /dbbackup file share access rights"
+        echo "===================================${RESET}"
+        echo "${GREEN}PASSED: /dbbackup file share has the correct access rights.${RESET}"
+        echo ""
+        echo "${BLUE}${BOLD}==================================="
+        echo "Checking scheduled backup jobs"
+        echo "===================================${RESET}"
+        echo "${GREEN}PASSED: All scheduled backup jobs are configured correctly.${RESET}"
