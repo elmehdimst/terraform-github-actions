@@ -7,18 +7,33 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     name: Checking Oracle instance status
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2    
   test2:
     runs-on: ubuntu-latest
     name: Checking the listener status
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2    
   test3:
     runs-on: ubuntu-latest
     name: Checking RMAN Catalog access
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
   test4:
     runs-on: ubuntu-latest
     name: Checking /dbbackup file share access rights
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
   test5:
     runs-on: ubuntu-latest
     name: Checking scheduled backup jobs
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
   test:
     runs-on: ubuntu-latest
     name: Gather Test Outputs
